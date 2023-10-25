@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GPS sensor</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="choose_your_sensor">Choose your sensor</string>
+    <string name="hello">Hello</string>
+    <string name="return_to_menu">Return to menu</string>
 </resources>
