@@ -26,4 +26,17 @@
         android:layout_marginTop="201dp"
         android:text="@string/accelerometer" />
 
+    <Button
+        android:id="@+id/buttonGPS"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonAccelerometer"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="130dp"
+        android:text="GPS map" />
+
+
 </RelativeLayout>

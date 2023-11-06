@@ -16,6 +16,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Accelerometer::class.java)
             startActivity(intent)
         }
+
+        val buttonGPS: Button = findViewById(R.id.buttonGPS)
+        buttonGPS.setOnClickListener {
+            val intent = Intent(this, GpsMapActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
