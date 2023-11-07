@@ -22,7 +22,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, GpsMapActivity::class.java)
             startActivity(intent)
         }
+
+        val buttonCompass = findViewById<Button>(R.id.buttonCompass)
+        buttonCompass.setOnClickListener {
+            val intent = Intent(this, Compass::class.java)
+            startActivity(intent)
+        }
     }
-
-
 }
