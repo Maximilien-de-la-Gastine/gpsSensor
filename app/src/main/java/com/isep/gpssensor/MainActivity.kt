@@ -16,7 +16,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Accelerometer::class.java)
             startActivity(intent)
         }
+
+        val buttonCompass = findViewById<Button>(R.id.buttonCompass)
+        buttonCompass.setOnClickListener {
+            val intent = Intent(this, Compass::class.java)
+            startActivity(intent)
+        }
     }
-
-
 }
