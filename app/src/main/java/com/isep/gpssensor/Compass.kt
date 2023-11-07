@@ -35,7 +35,10 @@ class Compass : AppCompatActivity(), SensorEventListener {
         imageView = findViewById(R.id.compass)
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+            ?: throw IllegalStateException("Accelerometer sensor not available.")
         magnetometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+            ?: throw IllegalStateException("Magnetometer sensor not available.")
+
     }
 
     override fun onSensorChanged(sensorEvent: SensorEvent) {
