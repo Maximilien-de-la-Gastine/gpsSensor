@@ -32,10 +32,8 @@ class Accelerometer : AppCompatActivity(), SensorEventListener {
     }
 
     private fun setUpSensorStuff() {
-        // Create the sensor manager
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 
-        // Specify the sensor you want to listen to
         sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)?.also { accelerometer ->
             sensorManager.registerListener(
                 this,
@@ -46,16 +44,11 @@ class Accelerometer : AppCompatActivity(), SensorEventListener {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onSensorChanged(event: SensorEvent?) {
-        // Checks for the sensor we have registered
         if (event?.sensor?.type == Sensor.TYPE_ACCELEROMETER) {
-            //Log.d("Main", "onSensorChanged: sides ${event.values[0]} front/back ${event.values[1]} ")
 
-            // Sides = Tilting phone left(10) and right(-10)
             val sides = event.values[0]
 
-            // Up/Down = Tilting phone up(10), flat (0), upside-down(-10)
             val upDown = event.values[1]
 
             square.apply {
@@ -66,7 +59,6 @@ class Accelerometer : AppCompatActivity(), SensorEventListener {
                 translationY = upDown * 10
             }
 
-            // Changes the colour of the square if it's completely flat
             val color = if (upDown.toInt() == 0 && sides.toInt() == 0) Color.GREEN else Color.RED
             square.setBackgroundColor(color)
 
