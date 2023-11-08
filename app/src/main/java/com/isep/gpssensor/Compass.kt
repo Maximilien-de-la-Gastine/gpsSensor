@@ -68,7 +68,6 @@ class Compass : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onAccuracyChanged(sensor: Sensor, i: Int) {
-        // Handle accuracy changes if needed
     }
 
     override fun onResume() {
@@ -76,12 +75,5 @@ class Compass : AppCompatActivity(), SensorEventListener {
 
         sensorManager.registerListener(this, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL)
         sensorManager.registerListener(this, magnetometerSensor, SensorManager.SENSOR_DELAY_NORMAL)
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-        sensorManager.unregisterListener(this, accelerometerSensor)
-        sensorManager.unregisterListener(this, magnetometerSensor)
     }
 }
